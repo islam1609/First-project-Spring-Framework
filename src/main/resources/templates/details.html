@@ -1,0 +1,39 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{'/css/bootstrap.css'}">
+    <title>BITLAB SHOP</title>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="/">BITLAB-SHOP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{'/addItem'}">Add Item</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Sign in</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div th:if = "${tovar!=null}">
+    <div class="mx-auto">
+    <h1>DETAILS OF <span th:text = "${tovar.name}"></span></h1>
+    <h3>
+        FOR <span class="mt-2" th:text = "${tovar.price}"></span>
+        <br>
+        <span class="mt-2" th:text = "${tovar.description}"></span>
+    </h3>
+</div>
+</div>
+</body>
+</html>
